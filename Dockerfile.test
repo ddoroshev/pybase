@@ -1,0 +1,5 @@
+FROM ghcr.io/ddoroshev/pybase:compile-3.11.6
+
+FROM ghcr.io/ddoroshev/pybase:runtime-3.11.6
+
+
