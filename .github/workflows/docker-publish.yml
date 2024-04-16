@@ -23,13 +23,13 @@ jobs:
             - '3.11.9'
             - '3.12.3'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Build image
         run: docker build . --build-arg PYTHON_VERSION=${{ matrix.python }} --file Dockerfile.${{ matrix.image }} --tag $IMAGE_NAME
 
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
