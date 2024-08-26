@@ -2,7 +2,7 @@ ARG PYTHON_VERSION
 FROM python:${PYTHON_VERSION}-slim
 
 RUN apt update && apt install -y build-essential
-RUN pip install -U pip && pip install poetry==1.8.2
+RUN pip install -U pip && pip install poetry==1.8.3
 RUN mkdir /app
 RUN python -m venv "/venv"
 ENV VIRTUAL_ENV "/venv"

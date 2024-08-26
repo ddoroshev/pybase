@@ -1,5 +1,5 @@
-FROM ghcr.io/ddoroshev/pybase:3.12.3-compile
+FROM ghcr.io/ddoroshev/pybase:3.12.5-compile
 
-FROM ghcr.io/ddoroshev/pybase:3.12.3-runtime
+FROM ghcr.io/ddoroshev/pybase:3.12.5-runtime
 
 
