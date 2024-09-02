@@ -1,0 +1,18 @@
+ARG PYTHON_VERSION
+
+FROM python:${PYTHON_VERSION}-slim
+
+ARG APP_DIR=/app
+ARG VIRTUAL_ENV=/venv
+
+ENV VIRTUAL_ENV=$VIRTUAL_ENV
+ENV PATH=$VIRTUAL_ENV/bin:$PATH
+
+RUN rm -f /etc/apt/apt.conf.d/docker-clean
+RUN --mount=type=cache,target=/var/cache/apt \
+    apt-get update && \
+    apt-get install -yqq --no-install-recommends \
+    curl make \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR $APP_DIR
