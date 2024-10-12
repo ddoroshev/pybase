@@ -21,7 +21,8 @@ jobs:
             - runtime
           python:
             - '3.11.10'
-            - '3.12.6'
+            - '3.12.7'
+            - '3.13.0'
     steps:
       - uses: actions/checkout@v4
 
