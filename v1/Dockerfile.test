@@ -1,5 +1,5 @@
-FROM ghcr.io/ddoroshev/pybase:3.12.6-compile-v1
+FROM ghcr.io/ddoroshev/pybase:3.13.0-compile-v1 AS compile
 
-FROM ghcr.io/ddoroshev/pybase:3.12.6-runtime-v1
+FROM ghcr.io/ddoroshev/pybase:3.13.0-runtime-v1
 
-
+COPY --from=compile $VIRTUAL_ENV $VIRTUAL_ENV
