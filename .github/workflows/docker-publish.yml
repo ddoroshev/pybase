@@ -24,7 +24,7 @@ jobs:
             - '3.12.11'
             - '3.13.5'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Build image
         run: docker build ${{ matrix.ver }} --build-arg PYTHON_VERSION=${{ matrix.python }} --file ${{ matrix.ver }}/Dockerfile.${{ matrix.image }} --tag $IMAGE_NAME
