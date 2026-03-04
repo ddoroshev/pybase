@@ -31,7 +31,7 @@ jobs:
         run: docker build ${{ matrix.ver }} --build-arg PYTHON_VERSION=${{ matrix.python }} --file ${{ matrix.ver }}/Dockerfile.${{ matrix.image }} --tag $IMAGE_NAME
 
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
